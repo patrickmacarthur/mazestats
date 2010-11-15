@@ -1,0 +1,2 @@
+/** Maze stuff */
+package maze;
