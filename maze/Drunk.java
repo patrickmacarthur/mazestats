@@ -29,8 +29,16 @@ public class Drunk
     if (newPoint.equals(_p)) {
       return false;
     } else {
-      newPoint = _p;
+      _p = newPoint;
       return true;
     }
+  }
+  
+  /**
+   * Returns the current position of the drunk.
+   */
+  public Point getPosition()
+  {
+	  return _p;
   }
 }

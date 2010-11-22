@@ -157,13 +157,21 @@ public class Maze
     }
 
     Point newPoint = dir.step(point);
-    return isWall(newPoint) ? point : newPoint;
+    return (!outsideMaze(newPoint) && isWall(newPoint)) ? point : newPoint;
   }
 
   /** Returns true if the given point in the maze is a wall. */
   private boolean isWall(Point p)
   {
     return _matrix[p.y][p.x];
+  }
+
+  /**
+   * Returns true if the passed point is outside the bounds of the maze
+   */
+  public boolean outsideMaze(Point p)
+  {
+	  return (p.x < 0 || p.y < 0 || p.x > 9 || p.y > 9);
   }
 
   public static void main(String[] args) throws IOException {
@@ -180,11 +188,16 @@ public class Maze
       "0 0 0 0 0 0 0 0 0 0\n";
     Maze m = new Maze(new StringReader(str));
     Point home = new Point(0,0);
-    Point east = new Point(1,0);
     Point test = m.move(home, Direction.SOUTH);
     assert test.equals(home) : "Point should be " + home.toString() + " but is " + test.toString();
+
     test = m.move(home, Direction.EAST);
-    assert test.equals(east) : "Point should be " + east.toString() + " but is " + test.toString();
+    assert test.equals(new Point(1,0)) : "Point should be (1,0) but is " + test.toString();
+    test = m.move(home, Direction.WEST);
+    assert test.equals(new Point(-1,0)) : "Point should be (-1,0) but is " + test.toString();
+    test = m.move(home, Direction.NORTH);
+    assert test.equals(new Point(0,-1)) : "Point should be (0,-1) but is " + test.toString();
+
     System.out.println(m.toString());
   }
 }
