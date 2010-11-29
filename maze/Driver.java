@@ -68,7 +68,6 @@ public class Driver
             while(!maze.outsideMaze(drunk.getPosition()))
             {
                 drunk.move();
-                System.err.println(drunk.getPosition());
                 steps++;
             }
             
@@ -106,7 +105,7 @@ public class Driver
         //create maze (loaded from file supplied as command-line parameter)
         d.initializeMaze(args[0]);
     
-        d.run(1);
+        d.run(1000);
         
         d.printResults();
         
