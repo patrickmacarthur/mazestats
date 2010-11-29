@@ -1,0 +1,26 @@
+A program that can be used to determine the number of random steps necessary to
+escape a maze.
+
+Data needs to be sent to a statistical analysis program to analyze the data.
+
+Maze files are assumed to be 10x10 and are in the format
+x x x x x x x x x x
+x x x x x x x x x x
+x x x x x x x x x x
+x x x x x x x x x x
+x x x x x x x x x x
+x x x x x x x x x x
+x x x x x x x x x x
+x x x x x x x x x x
+x x x x x x x x x x
+x x x x x x x x x x
+where 0 means empty space and 1 means a wall.  Position 5,5 is assumed to be the
+starting position and is expected to be empty.
+
+This program was written for a University of New Hampshire course, MATH 539
+Introduction to Statistical Analysis, final project.  The program was authored
+by Patrick MacArthur and William Rideout.
+
+The project was inspired by an MIT lecture for 6.00, an introductory computer
+science class that was used to demostrate a Monte Carlo random walk simulation.
+This program is an extension of that idea.
