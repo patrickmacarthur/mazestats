@@ -172,8 +172,7 @@ public class Driver
         //create maze (loaded from file supplied as command-line parameter)
         d.initializeMaze(filename);
 
-        //1000 is the default value
-        d.run(1000);
+        d.run(2000);
 
         d.printResults(filename + "-results.txt");
 
